@@ -6,22 +6,29 @@ import { Video } from "@/components/Video"
 
 export const Home: React.FC = () => {
   const modules = useAppSelector(state => state.player.course.modules)
-  
+
   return (
     <div className='bg-night w-screen h-screen text-info flex justify-center items-center'>
       <div className='flex w-[1100px] flex-col gap-6'>
         <div className='flex items-center justify-between'>
           <Header />
-          <button className='flex items-center gap-2 rounded bg-secondary px-3 text-sm font-medium text-info hover:bg-amber-600 transition-colors ease-in-out delay-200'>
-            <ChatCircle size={32} weight="light" />
+          <button className='flex items-center gap-2 rounded-md bg-secondary px-3 py-2 text-sm font-medium text-neutral-50 hover:bg-amber-400 transition-colors ease-in-out delay-200'>
+            <ChatCircle className='text-2xl' weight='light' />
           </button>
         </div>
-        <main className="relative flex overflow-hidden rounded-lg border border-forest bg-neutral-800 shadow pr-80">
-          <div className="flex-1">
+        <main className='relative flex overflow-hidden rounded-lg border border-forest bg-night shadow-md pr-80'>
+          <div className='flex-1'>
             <Video />
           </div>
-          <aside className="w-80 absolute inset-0 border-l divide-y-2 divide zinc-800 bg-zinc-900 overflow-y-auto">
-            <Module />
+          <aside className='w-80 absolute top-0 right-0 bottom-0 border-l-zinc-800 divide-y-2 divide-zinc-800 bg-forest overflow-y-auto'>
+            {modules?.map((module, index) => (
+              <Module
+                key={`m:${module.id}-key`}
+                moduleIndex={index}
+                title={module.title}
+                amountOfLesson={module.lessons.length}
+              />
+            ))}
           </aside>
         </main>
       </div>
