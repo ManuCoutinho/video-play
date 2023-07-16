@@ -24,13 +24,13 @@ export const Module: React.FC<ModuleProps> = ({ amountOfLesson, moduleIndex, tit
         <div className='flex flex-col gap-1 text-left'>
           <strong>{title}</strong>
           <span className='text-xs text-info flex justify-between'>
-            {amountOfLesson} aulas{' '}
-            <CaretDown
-              weight='light'
-              className='h-5 w-5 ml-auto text-zinc group-data-[state=open]:rotate-180 transition-transform delay-200 ease-linear'
-            />
+            {amountOfLesson} aulas
           </span>
         </div>
+        <CaretDown
+          weight='light'
+          className='h-5 w-5 ml-auto text-info group-data-[state=open]:rotate-180 transition-transform delay-200 ease-linear hover:text-info/30 transition-color'
+        />
       </Collapsible.Trigger>
 
       <Collapsible.Content>
