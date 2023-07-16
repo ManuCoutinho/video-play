@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "Emanuela Coutinho",
   "license": "MIT License",
-  "description": "Boilerplate vite, react, ts",
+  "description": "Video player",
   "bugs": {
     "url": "https://github.com/ManuCoutinho/video-play"
   },
@@ -38,7 +38,7 @@
       "vitest related --run --passWithNoTests --bail"
     ],
     "*.{json,md, yaml}": [
-      "prettier --check"
+      "prettier --write"
     ]
   },
   "dependencies": {
