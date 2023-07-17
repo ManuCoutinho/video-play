@@ -1,45 +1,41 @@
-<h1 align="center">Vitejs/React Template</h1>
+<h1 align="center">Video Play</h1>
 
-I created this template to make your life (and mine) easier when you need to start a new React project, using Vite.js, which includes the basic setup.
-The styling method is up to you 😉.
-Just clone the repository, install the dependencies and start coding.
-
-⭐Awesome template for Vitejs project's with:
+Player de video construído em React, contendo gerenciamento de estado realizado pelo Redux.
 
 - React@18
 - Typescript
 - Vite@4
 - Vitest
 - Testing Library
-- Eslint
-- Prettier
-- Stylelint
-- Husky
-- Lint Staged
+- Redux/Redux-toolkit
+- React Player
 
-_Happy hacking!_
 
-## :white_check_mark: Requirements
+## :white_check_mark: Requerimentos
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node (lts version)](https://nodejs.org/en/) installed.
+Antes de iniciar :checkered_flag:, você precisa ter [Git](https://git-scm.com) e [Node (lts version)](https://nodejs.org/en/) instalados no seu ambiente de desenvolvimento.
 
-## :checkered_flag: Starting
+## :checkered_flag: Iniciando
 
 ```bash
-# Clone this project  OR use as template
-$ git clone https://github.com/manucoutinho/vite-react-ts-template.git
-# Access
-$ cd vite-react-ts-template
-# Install dependencies
+# Clone este projeto
+$ git clone https://github.com/manucoutinho/video-play.git
+
+# Acesse o diretório
+$ cd video-play
+
+# Instale as dependências
 $ npm install
-# Run the project
+
+# Inicialize a API
+$ npm run server
+# A API inicializará em <http://localhost:3000>
+
+# Rode o projeto
 $ npm run dev
-# The dev server will initialize in the <http://localhost:5173>
+
+# O servidor de desenvolvimento inicializará em <http://localhost:5173>
 ```
-
-## :memo: License
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 &#xa0;
 
