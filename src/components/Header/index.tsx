@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-import { useAppSelector } from '@/store'
 import { useCurrentLesson } from '@/hooks/useCurrentLesson'
+import { useStore } from '@/store'
 
 export const Header: React.FC = () => {
   const { currentLesson, currentModule } = useCurrentLesson()
-  const isLoading = useAppSelector((store) => store.player.isLoading)
+  const { isLoading } = useStore()
   useEffect(() => {
     document.title = `Video Play - Assistindo: ${currentLesson?.title}`
   }, [currentLesson])

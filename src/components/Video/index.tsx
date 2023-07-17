@@ -1,16 +1,14 @@
 import Player from 'react-player'
-import { useAppDispatch, useAppSelector } from '@/store'
 import { SpinnerGap } from '@phosphor-icons/react'
-import { next } from '@/store/slices/player'
 import { useCurrentLesson } from '@/hooks/useCurrentLesson'
+import { useStore } from '@/store'
 
 export const Video: React.FC = () => {
-  const dispatch = useAppDispatch()
   const { currentLesson } = useCurrentLesson()
-  const isLoading = useAppSelector((state) => state.player.isLoading)
+  const { isLoading, next } = useStore()
 
   function handlePlayNext() {
-    dispatch(next())
+    next()
   }
 
   return (

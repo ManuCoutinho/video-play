@@ -1,23 +1,16 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { CaretDown } from '@phosphor-icons/react'
-import { useAppDispatch, useAppSelector } from '@/store'
-import { ModuleProps } from './types'
+import { useStore } from '@/store'
 import { Lesson } from '../Lesson'
-import { play } from '@/store/slices/player'
+import { ModuleProps } from './types'
 
 export const Module: React.FC<ModuleProps> = ({
   amountOfLesson,
   moduleIndex,
   title
 }) => {
-  const { currentModuleIndex, currentLessonIndex } = useAppSelector((state) => {
-    const { currentModuleIndex, currentLessonIndex } = state.player
-    return { currentModuleIndex, currentLessonIndex }
-  })
-  const lessons = useAppSelector(
-    (state) => state.player.course?.modules[moduleIndex].lessons
-  )
-  const dispatch = useAppDispatch()
+  const { currentModuleIndex, currentLessonIndex, course, play } = useStore()
+  const lessons = course?.modules[moduleIndex].lessons
 
   return (
     <Collapsible.Root className='group' defaultOpen={moduleIndex === 0}>
@@ -46,7 +39,7 @@ export const Module: React.FC<ModuleProps> = ({
             return (
               <Lesson
                 {...lesson}
-                onPlay={() => dispatch(play([moduleIndex, lessonIndex]))}
+                onPlay={() => play([moduleIndex, lessonIndex])}
                 key={lesson.id}
                 isCurrent={isCurrent}
               />

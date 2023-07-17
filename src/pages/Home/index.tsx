@@ -1,19 +1,17 @@
 import { useEffect } from 'react'
 import { ChatCircle } from '@phosphor-icons/react'
-import { useAppDispatch, useAppSelector } from '@/store'
+import { useStore } from '@/store'
 import { Header } from '@/components/Header'
 import { Module } from '@/components/Module'
 import { Video } from '@/components/Video'
-import { loadCourse } from '@/store/slices/player'
 
 export const Home: React.FC = () => {
-  const modules = useAppSelector((state) => state.player.course?.modules)
-  const dispatch = useAppDispatch()
+  const { course, load } = useStore()
 
   useEffect(() => {
-    dispatch(loadCourse())
+    load()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [load])
 
   return (
     <div className='bg-night w-screen h-screen text-info flex justify-center items-center'>
@@ -30,7 +28,7 @@ export const Home: React.FC = () => {
             <Video />
           </div>
           <aside className='w-80 absolute top-0 right-0 bottom-0 border-l-zinc-800 divide-y-2 divide-zinc-800 bg-forest overflow-y-auto'>
-            {modules?.map((module, index) => (
+            {course?.modules.map((module, index) => (
               <Module
                 key={`m:${module.id}-key`}
                 moduleIndex={index}
