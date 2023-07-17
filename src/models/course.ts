@@ -1,4 +1,4 @@
-import { ModuleType } from "./modules"
+import { ModuleType } from './modules'
 
 export type CourseType = {
   id: number

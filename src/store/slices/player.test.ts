@@ -6,7 +6,7 @@ const mockInitialState = state
 describe('test slice reducer', () => {
   it('should be able to play from reducer action', () => {
     const state = reducer(mockInitialState, play([2, 1]))
-    
+
     expect(state.currentModuleIndex).toEqual(2)
     expect(state.currentLessonIndex).toEqual(1)
   })

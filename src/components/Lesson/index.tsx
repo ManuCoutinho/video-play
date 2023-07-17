@@ -1,8 +1,12 @@
 import { PlayCircle, VideoCamera } from '@phosphor-icons/react'
 import { LessonProps } from './types'
 
-export const Lesson: React.FC<LessonProps> = ({ title, duration, onPlay, isCurrent = false }) =>{
-
+export const Lesson: React.FC<LessonProps> = ({
+  title,
+  duration,
+  onPlay,
+  isCurrent = false
+}) => {
   return (
     <button
       onClick={onPlay}

@@ -1,4 +1,4 @@
-import { PlayerStateType } from "@/models/player"
+import { PlayerStateType } from '@/models/player'
 
 export const state = {
   course: {

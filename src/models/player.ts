@@ -1,4 +1,4 @@
-import { CourseType } from "./course"
+import { CourseType } from './course'
 
 export type PlayerStateType = {
   course: CourseType | null

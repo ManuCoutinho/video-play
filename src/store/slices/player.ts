@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { useAppSelector } from '..'
 import { PlayerStateType } from '@/models/player'
 import { baseUrl } from '@/constants/baseUrl'
 
@@ -10,18 +9,15 @@ const initialState: PlayerStateType = {
   isLoading: true
 }
 
-export const loadCourse = createAsyncThunk(
-  'load/state',
-  async () => {
-     const controller = new AbortController()
-     const signal = controller.signal
-     const request = await fetch(`${baseUrl}/courses/1`, { signal })
-       .then((res) => res.json())
-       .finally(() => controller.abort())
+export const loadCourse = createAsyncThunk('load/state', async () => {
+  const controller = new AbortController()
+  const signal = controller.signal
+  const request = await fetch(`${baseUrl}/courses/1`, { signal })
+    .then((res) => res.json())
+    .finally(() => controller.abort())
 
-     return request
-  }
-)
+  return request
+})
 
 export const playerSlice = createSlice({
   name: 'player',
@@ -33,15 +29,16 @@ export const playerSlice = createSlice({
     },
     next: (state) => {
       const nextLessonIndex = state.currentLessonIndex + 1
-      const nextLesson = state.course?.modules[state.currentModuleIndex].lessons[nextLessonIndex]
+      const nextLesson =
+        state.course?.modules[state.currentModuleIndex].lessons[nextLessonIndex]
 
-      if (nextLesson){
+      if (nextLesson) {
         state.currentLessonIndex = nextLessonIndex
       } else {
         const nextModuleIndex = state.currentModuleIndex + 1
         const nextModule = state.course?.modules[nextModuleIndex]
 
-        if(nextModule) {
+        if (nextModule) {
           state.currentModuleIndex = nextModuleIndex
           state.currentLessonIndex = 0
         }
@@ -53,7 +50,7 @@ export const playerSlice = createSlice({
       state.course = action.payload
       state.isLoading = false
     })
-    builder.addCase(loadCourse.pending, (state, action) => {
+    builder.addCase(loadCourse.pending, (state) => {
       state.isLoading = true
     })
   }
@@ -61,13 +58,3 @@ export const playerSlice = createSlice({
 
 export const player = playerSlice.reducer
 export const { play, next } = playerSlice.actions
-
-export const useCurrentLesson = () => {
-    const { currentLesson, currentModule } = useAppSelector((state) => {
-      const { currentLessonIndex, currentModuleIndex, course } = state.player
-      const currentModule = course?.modules[currentModuleIndex]
-      const currentLesson = currentModule?.lessons[currentLessonIndex]
-      return { currentLesson, currentModule }
-    })
-     return { currentLesson, currentModule }
-}

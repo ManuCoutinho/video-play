@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { screen, render } from '@testing-library/react'
 import { describe, it } from 'vitest'
-import {Module} from '.'
+import { Module } from '.'
 
 const moduleMock = {
   title: '',
@@ -13,4 +13,4 @@ describe('<Module/>', () => {
     render(<Module {...moduleMock} />)
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
- })
+})

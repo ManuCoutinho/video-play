@@ -1,17 +1,18 @@
-import { useEffect } from "react"
-import { ChatCircle } from "@phosphor-icons/react"
-import { useAppDispatch, useAppSelector } from "@/store"
-import { Header } from "@/components/Header"
-import { Module } from "@/components/Module"
-import { Video } from "@/components/Video"
-import { loadCourse } from "@/store/slices/player"
+import { useEffect } from 'react'
+import { ChatCircle } from '@phosphor-icons/react'
+import { useAppDispatch, useAppSelector } from '@/store'
+import { Header } from '@/components/Header'
+import { Module } from '@/components/Module'
+import { Video } from '@/components/Video'
+import { loadCourse } from '@/store/slices/player'
 
 export const Home: React.FC = () => {
-  const modules = useAppSelector(state => state.player.course?.modules)
+  const modules = useAppSelector((state) => state.player.course?.modules)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(loadCourse())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
