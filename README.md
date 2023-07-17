@@ -7,7 +7,7 @@ Player de video construído em React, contendo estado global gerenciado pelo [Zu
 - Vite@4
 - Vitest
 - Testing Library
-- Redux/Redux-toolkit
+- Zustand
 - React Player
 
 
