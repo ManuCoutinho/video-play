@@ -24,6 +24,7 @@ export const Video: React.FC = () => {
         </div>
       ) : (
         <Player
+          data-testid='player'
           id='player'
           width='100%'
           height='100%'

@@ -4,6 +4,7 @@ import { state } from '@/__mocks__/data/playerState'
 
 const { course: mockCourse } = state
 const mockInitialState = store.getState()
+
 describe('Zustand store', () => {
   beforeEach(() => store.setState(mockInitialState))
   it('should be able to play', () => {
