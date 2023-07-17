@@ -1,11 +1,18 @@
+import { useEffect } from "react"
 import { ChatCircle } from "@phosphor-icons/react"
-import { useAppSelector } from "@/store"
+import { useAppDispatch, useAppSelector } from "@/store"
 import { Header } from "@/components/Header"
 import { Module } from "@/components/Module"
 import { Video } from "@/components/Video"
+import { loadCourse } from "@/store/slices/player"
 
 export const Home: React.FC = () => {
-  const modules = useAppSelector(state => state.player.course.modules)
+  const modules = useAppSelector(state => state.player.course?.modules)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(loadCourse())
+  }, [])
 
   return (
     <div className='bg-night w-screen h-screen text-info flex justify-center items-center'>
@@ -14,6 +21,7 @@ export const Home: React.FC = () => {
           <Header />
           <button className='flex items-center gap-2 rounded-md bg-secondary px-3 py-2 text-sm font-medium text-neutral-50 hover:bg-amber-400 transition-colors ease-in-out delay-200'>
             <ChatCircle className='text-2xl' weight='light' />
+            Deixar feedback
           </button>
         </div>
         <main className='relative flex overflow-hidden rounded-lg border border-forest bg-night shadow-md pr-80'>

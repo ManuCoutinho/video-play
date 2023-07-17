@@ -1,12 +1,28 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { useAppSelector } from '..'
 import { PlayerStateType } from '@/models/player'
+import { baseUrl } from '@/constants/baseUrl'
 
 const initialState: PlayerStateType = {
   course: null,
   currentLessonIndex: 0,
-currentModuleIndex: 0
+  currentModuleIndex: 0,
+  isLoading: true
 }
+
+export const loadCourse = createAsyncThunk(
+  'load/state',
+  async () => {
+     const controller = new AbortController()
+     const signal = controller.signal
+     const request = await fetch(`${baseUrl}/courses/1`, { signal })
+       .then((res) => res.json())
+       .finally(() => controller.abort())
+
+     return request
+  }
+)
+
 export const playerSlice = createSlice({
   name: 'player',
   initialState,
@@ -31,6 +47,15 @@ export const playerSlice = createSlice({
         }
       }
     }
+  },
+  extraReducers(builder) {
+    builder.addCase(loadCourse.fulfilled, (state, action) => {
+      state.course = action.payload
+      state.isLoading = false
+    })
+    builder.addCase(loadCourse.pending, (state, action) => {
+      state.isLoading = true
+    })
   }
 })
 

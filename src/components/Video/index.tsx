@@ -1,13 +1,13 @@
-import { useAppSelector } from "@/store"
+import { useAppDispatch, useAppSelector } from "@/store"
 import { next, useCurrentLesson } from "@/store/slices/player"
 import { SpinnerGap } from "@phosphor-icons/react"
 import Player from 'react-player'
-import { useDispatch } from "react-redux"
+
 
 export const Video: React.FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { currentLesson } = useCurrentLesson()
-  const isLoading = false
+  const isLoading = useAppSelector(state => state.player.isLoading)
 
   function handlePlayNext(){
     dispatch(next())
@@ -31,7 +31,7 @@ export const Video: React.FC = () => {
           controls
           playing
           onEnded={handlePlayNext}
-          url={`https://www.youtube.com/watch?v=${currentLesson.id}`}
+          url={`https://www.youtube.com/watch?v=${currentLesson?.id}`}
          />
       )}
     </div>
