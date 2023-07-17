@@ -1,6 +1,6 @@
 <h1 align="center">Video Play</h1>
 
-Player de video construído em React, contendo gerenciamento de estado realizado pelo Redux.
+Player de video construído em React, contendo estado global gerenciado pelo [Zustand](https://zustand-demo.pmnd.rs).
 
 - React@18
 - Typescript
