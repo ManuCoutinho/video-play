@@ -1,122 +1,138 @@
 {
   "courses": [
     {
-    "id": 1,
-    "modules": [
-      {
-        "id": 1,
-        "title": "Iniciando com React",
-        "lessons": [
-          { "id": "Jai8w6K_GnY", "title": "CSS Modules", "duration": "13:45" },
-          {
-            "id": "w-DW4DhDfcw",
-            "title": "Estilização do Post",
-            "duration": "10:05"
-          },
-          {
-            "id": "D83-55LUdKE",
-            "title": "Componente: Header",
-            "duration": "06:33"
-          },
-          {
-            "id": "W_ATsETujaY",
-            "title": "Componente: Sidebar",
-            "duration": "09:12"
-          },
-          { "id": "Pj8dPeameYo", "title": "CSS Global", "duration": "03:23" },
-          {
-            "id": "8KBq2vhwbac",
-            "title": "Form de comentários",
-            "duration": "11:34"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Estrutura da aplicação",
-        "lessons": [
-          {
-            "id": "gE48FQXRZ_o",
-            "title": "Componente: Comment",
-            "duration": "13:45"
-          },
-          {
-            "id": "Ng_Vk4tBl0g",
-            "title": "Responsividade",
-            "duration": "10:05"
-          },
-          {
-            "id": "h5JA3wfuW1k",
-            "title": "Interações no JSX",
-            "duration": "06:33"
-          },
-          {
-            "id": "1G0vSTqWELg",
-            "title": "Utilizando estado",
-            "duration": "09:12"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "modules": [
-      {
-        "id": 1,
-        "title": "Iniciando com React",
-        "lessons": [
-          { "id": "Jai8w6K_GnY", "title": "CSS Modules", "duration": "13:45" },
-          {
-            "id": "w-DW4DhDfcw",
-            "title": "Estilização do Post",
-            "duration": "10:05"
-          },
-          {
-            "id": "D83-55LUdKE",
-            "title": "Componente: Header",
-            "duration": "06:33"
-          },
-          {
-            "id": "W_ATsETujaY",
-            "title": "Componente: Sidebar",
-            "duration": "09:12"
-          },
-          { "id": "Pj8dPeameYo", "title": "CSS Global", "duration": "03:23" },
-          {
-            "id": "8KBq2vhwbac",
-            "title": "Form de comentários",
-            "duration": "11:34"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Estrutura da aplicação",
-        "lessons": [
-          {
-            "id": "gE48FQXRZ_o",
-            "title": "Componente: Comment",
-            "duration": "13:45"
-          },
-          {
-            "id": "Ng_Vk4tBl0g",
-            "title": "Responsividade",
-            "duration": "10:05"
-          },
-          {
-            "id": "h5JA3wfuW1k",
-            "title": "Interações no JSX",
-            "duration": "06:33"
-          },
-          {
-            "id": "1G0vSTqWELg",
-            "title": "Utilizando estado",
-            "duration": "09:12"
-          }
-        ]
-      }
-    ]
-  }
-]
+      "id": 1,
+      "modules": [
+        {
+          "id": 1,
+          "title": "Chill Time",
+          "lessons": [
+            {
+              "id": "BIZz4A39rT4",
+              "title": "Anime Jazz Compilation",
+              "duration": "1:59:15"
+            },
+            {
+              "id": "HUCdJf6YDaQ",
+              "title": "Adventurous Souls",
+              "duration": "3:32:01"
+            },
+            {
+              "id": "eyUqya7ZXhw",
+              "title": "Study Vibes",
+              "duration": "3:05:45"
+            },
+            {
+              "id": "23veejsZ5r4",
+              "title": "Lofi Brasil",
+              "duration": "02:13:37"
+            },
+            {
+              "id": "3SeOVVJXOUo",
+              "title": "Lofi Hip Hop",
+              "duration": "1:26:15"
+            },
+            {
+              "id": "6H-PLF2CR18",
+              "title": "lofi Deep Focus",
+              "duration": "3:00:00"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Fun Time",
+          "lessons": [
+            {
+              "id": "iaGjz4dtr3o",
+              "title": "Bakermat - Baianá",
+              "duration": "03:20"
+            },
+            {
+              "id": "oRW4pSg64WY",
+              "title": "Quedate Luna",
+              "duration": "06:10"
+            },
+            {
+              "id": "_ro3KdW3y9U",
+              "title": "Massego Mix",
+              "duration": "24:10"
+            },
+            {
+              "id": "4-QLKSzcnsc",
+              "title": "Bandolero Remix",
+              "duration": "17:12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "modules": [
+        {
+          "id": 1,
+          "title": "Chill Time",
+          "lessons": [
+            {
+              "id": "BIZz4A39rT4",
+              "title": "Anime Jazz Compilation",
+              "duration": "1:59:15"
+            },
+            {
+              "id": "HUCdJf6YDaQ",
+              "title": "Adventurous Souls",
+              "duration": "3:32:01"
+            },
+            {
+              "id": "eyUqya7ZXhw",
+              "title": "Study Vibes",
+              "duration": "3:05:45"
+            },
+            {
+              "id": "23veejsZ5r4",
+              "title": "Lofi Brasil",
+              "duration": "02:13:37"
+            },
+            {
+              "id": "3SeOVVJXOUo",
+              "title": "Lofi Hip Hop",
+              "duration": "1:26:15"
+            },
+            {
+              "id": "6H-PLF2CR18",
+              "title": "lofi Deep Focus",
+              "duration": "3:00:00"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Fun Time",
+          "lessons": [
+            {
+              "id": "iaGjz4dtr3o",
+              "title": "Bakermat - Baianá",
+              "duration": "03:20"
+            },
+            {
+              "id": "oRW4pSg64WY",
+              "title": "Quedate Luna",
+              "duration": "06:10"
+            },
+            {
+              "id": "_ro3KdW3y9U",
+              "title": "Massego Mix",
+              "duration": "24:10"
+            },
+            {
+              "id": "4-QLKSzcnsc",
+              "title": "Bandolero Remix",
+              "duration": "17:12"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
