@@ -75,7 +75,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^22.1.0",
     "json-server": "^0.17.3",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.26",
     "prettier": "^3.0.0",
     "semantic-release": "^21.0.7",
